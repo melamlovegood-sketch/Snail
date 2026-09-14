@@ -2,6 +2,10 @@
 
 > 不是每天都能完成所有事，但每一步都算数。
 
+[![PWA](https://img.shields.io/badge/PWA-installable-5A7D67)](https://friday0.top)
+[![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?logo=javascript&logoColor=111)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **线上体验 →** [friday0.top](https://friday0.top)
 
 ---
@@ -48,17 +52,34 @@ Snail 是一个温柔对待拖延的日程管理 PWA。
 
 | 模块 | 技术 |
 |------|------|
-| 前端 | 纯 HTML/CSS/JS，单文件 PWA |
+| 前端 | 模块化 HTML/CSS/原生 JavaScript PWA |
 | AI 解析 | 通义千问（文字：qwen-plus / 图片：qwen-vl-plus）|
 | 云同步 | Supabase |
 | 部署 | Cloudflare Pages + Vercel Edge Function（解决 CORS）|
 
 ---
 
+## 🧭 项目结构
+
+```text
+.
+├── index.html          # 应用入口
+├── src/                # 按功能拆分的前端模块
+├── styles.css          # 视觉与响应式样式
+├── sw.js               # 离线缓存与 PWA 更新
+├── api/                # Vercel AI 代理
+└── snail-api/          # Cloudflare Worker 辅助服务
+```
+
+浏览器只接收公开配置；通义千问密钥应保存在服务端环境变量中，不要写入前端代码或提交到仓库。
+
+---
+
 ## 🚀 自己部署
 
 ```bash
-git clone https://github.com/your-username/snail-daily
+git clone https://github.com/melamlovegood-sketch/Snail.git
+cd Snail
 ```
 
 **1. 部署 Vercel Edge Function（千问 API 代理）**
@@ -95,4 +116,4 @@ Snail 的核心不是「提高效率」，而是**接受自己本来的节奏**�
 
 ## 📄 License
 
-MIT
+Released under the [MIT License](LICENSE).
